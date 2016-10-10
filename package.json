@@ -1,0 +1,29 @@
+{
+  "name": "ehr-node-webhook",
+  "version": "0.0.1",
+  "author": "Edgar Harold Reyes",
+  "license": "MIT",
+  "description": "This project was developed to deploying codes to a server remotely using BitBucket or GitHub webhooks.",
+  "main": "app.js",
+  "private": true,
+  "scripts": {
+    "start": "npm install && nodemon app.js",
+    "test": "npm install && export NODE_ENV=development && ./node_modules/.bin/mocha --reporter spec && export NODE_ENV=development",
+    "docs": "apidoc -i controllers -o apidoc/",
+    "cluster": "forever start cluster.js",
+    "forever": "forever start app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eharoldreyes/ehr-node-webhook"
+  },
+  "dependencies": {
+    "netmask": "^1.0.6",
+    "body-parser": "^1.15.2",
+    "compression": "^1.6.2",
+    "express": "^4.14.0",
+    "helmet": "^2.1.2",
+    "response-time": "^2.3.1",
+    "method-override": "^2.3.6"
+  }
+}
